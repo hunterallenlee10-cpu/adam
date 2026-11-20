@@ -14,7 +14,7 @@ export type Photo = {
 
 const raw = (f: string) => `/images/raw/${f}`;
 
-export const photos = {
+const photoMap = {
   logo: {
     id: "logo",
     src: raw("00-logo-logo-dl-adams-property-works.png"),
@@ -404,8 +404,6 @@ export const photos = {
   },
 } satisfies Record<string, Photo>;
 
-export type PhotoId = keyof typeof photos;
+export type PhotoId = keyof typeof photoMap;
 
-export function photo(id: PhotoId): Photo {
-  return photos[id];
-}
+export const photos: Record<PhotoId, Photo> = photoMap;
