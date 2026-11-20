@@ -9,11 +9,12 @@ type Props = {
   preload?: boolean;
   pos?: string;
   alt?: string;
+  decorative?: boolean;
 };
 
 // Every image gets a sizes value, a width and a height, and alt text from the photo map.
 // It fills its frame with object-fit: cover and never upscales past the source width.
-export function Photo({ id, sizes, className = "", imgClassName = "", preload = false, pos, alt }: Props) {
+export function Photo({ id, sizes, className = "", imgClassName = "", preload = false, pos, alt, decorative = false }: Props) {
   const p = photos[id];
   return (
     <div className={`photo-frame ${className}`}>
@@ -21,7 +22,8 @@ export function Photo({ id, sizes, className = "", imgClassName = "", preload = 
         src={p.src}
         width={p.width}
         height={p.height}
-        alt={alt ?? p.alt}
+        alt={decorative ? "" : (alt ?? p.alt)}
+        aria-hidden={decorative || undefined}
         sizes={sizes}
         preload={preload}
         loading={preload ? "eager" : "lazy"}

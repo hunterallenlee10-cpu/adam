@@ -72,7 +72,7 @@ for (const page of pages) {
   // Images.
   for (const img of html.matchAll(/<img\b[^>]*>/gi)) {
     const tag = img[0];
-    const decorative = /aria-hidden="true"/.test(tag);
+    const decorative = /aria-hidden="true"/.test(tag) && /alt=""/.test(tag);
     if (!/\balt="[^"]+"/.test(tag) && !decorative) fail(page, `img without alt: ${tag.slice(0, 120)}`);
     if (!/\bwidth="\d+"/.test(tag) || !/\bheight="\d+"/.test(tag)) fail(page, `img without width/height: ${tag.slice(0, 120)}`);
   }
