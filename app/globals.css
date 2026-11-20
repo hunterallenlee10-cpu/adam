@@ -220,6 +220,12 @@
     -webkit-tap-highlight-color: transparent;
     white-space: nowrap;
   }
+  @media (max-width: 399.98px) {
+    .btn {
+      white-space: normal;
+      text-align: center;
+    }
+  }
   .btn:active {
     transform: translateY(1px);
   }

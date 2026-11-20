@@ -45,7 +45,7 @@ export function StickyBar() {
       aria-hidden={!visible}
       inert={!visible}
     >
-      <div className="grid grid-cols-[1fr_1fr_1.6fr] gap-2 px-3 py-3">
+      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.6fr)] gap-2 px-3 py-3">
         <a href={business.tel} className="btn btn-outline min-h-[52px] px-2" aria-label={`Call ${business.phone}`}>
           <Phone size={18} aria-hidden="true" />
           Call

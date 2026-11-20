@@ -181,9 +181,9 @@ export function ServicePage({ slug }: { slug: Slug }) {
             {s.related.map((slug) => {
               const r = services[slug];
               return (
-                <li key={slug}>
+                <li key={slug} className="min-w-0">
                   <Link href={`/${r.slug}`} className="group slab flex items-center gap-5 p-4 transition-colors hover:border-primary">
-                    <Photo id={r.heroPhoto} sizes="128px" pos={r.heroPos} className="h-20 w-28 shrink-0" />
+                    <Photo id={r.heroPhoto} sizes="128px" pos={r.heroPos} className="hidden h-20 w-28 shrink-0 xs:block" />
                     <span className="min-w-0 flex-1">
                       <span className="block font-display text-h3 font-extrabold text-primary wide-sm">{r.crumb}</span>
                       <span className="block text-sm text-muted">{r.intro.split(".")[0]}.</span>
