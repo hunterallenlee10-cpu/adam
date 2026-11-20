@@ -10,7 +10,7 @@ export const IS_LIVE = SITE_MODE === "live";
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
 
 export function absoluteUrl(path = "/") {
-  return `${SITE_URL}${path === "/" ? "" : path}` || SITE_URL;
+  return `${SITE_URL}${path}`;
 }
 
 // Real last-modified dates for the sitemap. Update when a page changes.

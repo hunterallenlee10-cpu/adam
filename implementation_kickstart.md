@@ -15,7 +15,7 @@ After each phase: run the site, screenshot at 1440px and 375px with Playwright, 
 - [x] Phase 4: Estimate Planner, every button wired with the right pre-selects, the honest last step, sticky phone bar, `/free-estimate`
 - [x] Phase 5: the service page template, then the four service pages with their tools and sourced thresholds
 - [x] Phase 6: `/our-work`, `/about`, `/service-area`, `/faq`
-- [ ] Phase 7: SEO (launch switch, metadata, JSON-LD, robots, sitemap, llms.txt), the OG image, favicon, 404, `SEO-LAUNCH.md`, `CREDITS.md`
+- [x] Phase 7: SEO (launch switch, metadata, JSON-LD, robots, sitemap, llms.txt), the OG image, favicon, 404, `SEO-LAUNCH.md`, `CREDITS.md`
 - [ ] Phase 8: Lighthouse on a production build, phone and desktop, home plus one page of each type. Live mode: SEO 100, others 90+. Demo mode: only the indexing check fails. Print demo-mode headers for the home page and one image
 - [ ] Review 2: a second fresh subagent scores the whole site and runs a fact audit against section 1. One round of fixes
 - [ ] Phase 9: final checklist, last commit, ready for GitHub and a Vercel import as `adams-property-works-concept`

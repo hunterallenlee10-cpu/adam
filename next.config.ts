@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { redirects as oldSiteRedirects } from "./lib/redirects.mjs";
 
 const isLive = process.env.NEXT_PUBLIC_SITE_MODE === "live";
 
@@ -20,6 +21,9 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+  },
+  async redirects() {
+    return oldSiteRedirects;
   },
   // Demo mode: every response, images included, carries noindex. Live mode: no header.
   async headers() {
