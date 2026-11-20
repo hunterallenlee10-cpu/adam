@@ -1,8 +1,13 @@
+import { connection } from "next/server";
 import { IS_LIVE, LAST_MODIFIED, routes, absoluteUrl } from "@/lib/site";
 
 // Live mode only. Demo mode has no sitemap at all.
-export function GET() {
-  if (!IS_LIVE) return new Response("Not found", { status: 404, headers: { "content-type": "text/plain" } });
+export async function GET() {
+  // Demo mode answers at request time, so hosts that serve prerendered files keep the 404 status.
+  if (!IS_LIVE) {
+    await connection();
+    return new Response("Not found", { status: 404, headers: { "content-type": "text/plain" } });
+  }
   const urls = routes
     .map(
       (r) =>
