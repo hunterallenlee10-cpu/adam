@@ -184,7 +184,7 @@ export const reviews = [
 export const googleRating: string | null = null;
 
 export const equipment = [
-  { name: "Komatsu PC120 excavator", photo: "p02" },
+  { name: "Komatsu PC120 excavator", photo: "p01" },
   { name: "Red Kubota mini excavator", photo: "p03" },
   { name: "CAT wheel loader", photo: "p05" },
   { name: "Tracked skid steer", photo: "p15" },
