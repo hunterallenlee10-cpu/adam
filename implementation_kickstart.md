@@ -18,7 +18,7 @@ After each phase: run the site, screenshot at 1440px and 375px with Playwright, 
 - [x] Phase 7: SEO (launch switch, metadata, JSON-LD, robots, sitemap, llms.txt), the OG image, favicon, 404, `SEO-LAUNCH.md`, `CREDITS.md`
 - [x] Phase 8: Lighthouse on a production build, phone and desktop, home plus one page of each type. Live mode: SEO 100, others 90+. Demo mode: only the indexing check fails. Print demo-mode headers for the home page and one image
 - [x] Review 2: a second fresh subagent scores the whole site and runs a fact audit against section 1. One round of fixes
-- [ ] Phase 9: final checklist, last commit, ready for GitHub and a Vercel import as `adams-property-works-concept`
+- [x] Phase 9: final checklist, last commit, ready for GitHub and a Vercel import as `adams-property-works-concept`
 
 ## Design tokens ("Grade Line")
 
@@ -49,20 +49,20 @@ Spacing: 8px grid. Sections 112 to 128px desktop, 72px phones.
 
 ## Final review checklist
 
-- [ ] The hero alone would sell the job. The grade line plays once and reads as a laser level. At 375px the headline and primary button are visible without scrolling.
-- [ ] Dirt to Done works with mouse, touch and keyboard across all three jobs, and every caption matches the photo map.
-- [ ] The sediment threshold is sourced in a code comment and carries the "general guide" line. The concrete calculator returns correct cubic yards.
-- [ ] Every "Get My Free Estimate" button opens the planner with the right pre-selects. The last step names the real action. Phone and text links work.
-- [ ] Every item in "Things only this business has" is on the site.
-- [ ] Zero em dashes, zero generated images, zero invented facts. Internet photos appear only on the asphalt page, at most three, each credited and marked for swapping.
-- [ ] No star ratings and no review counts. The Google rating slot is empty and labelled.
-- [ ] Two fonts, the token palette only, motion in two places, no cursor effects or loading intro.
-- [ ] All 10 pages resolve from the nav and footer. No page is thin. Screenshots at 1440 and 375 cover one page of each type.
-- [ ] A keyboard-only pass and a 200% zoom pass both work. The sticky bar never hides the focused element.
-- [ ] Demo mode serves `noindex, nofollow` in the tag and the header, with the concept line. Live mode serves `index, follow`, the sitemap, `llms.txt` and no concept line.
-- [ ] Lighthouse SEO is 100 in live mode on phone and desktop. The other three are 90 or higher. In demo mode the only failing SEO check is indexing.
-- [ ] One h1 per page with the service and the region. Titles and descriptions are unique. JSON-LD validates and claims nothing untrue.
-- [ ] The Open Graph image and favicon are his.
+- [x] The hero alone would sell the job. The grade line plays once and reads as a laser level. At 375px the headline and primary button are visible without scrolling.
+- [x] Dirt to Done works with mouse, touch and keyboard across all three jobs, and every caption matches the photo map.
+- [x] The sediment threshold is sourced in a code comment and carries the "general guide" line. The concrete calculator returns correct cubic yards.
+- [x] Every "Get My Free Estimate" button opens the planner with the right pre-selects. The last step names the real action. Phone and text links work.
+- [x] Every item in "Things only this business has" is on the site.
+- [x] Zero em dashes, zero generated images, zero invented facts. Internet photos appear only on the asphalt page, at most three, each credited and marked for swapping.
+- [x] No star ratings and no review counts. The Google rating slot is empty and labelled.
+- [x] Two fonts, the token palette only, motion in two places, no cursor effects or loading intro.
+- [x] All 10 pages resolve from the nav and footer. No page is thin. Screenshots at 1440 and 375 cover one page of each type.
+- [x] A keyboard-only pass and a 200% zoom pass both work. The sticky bar never hides the focused element.
+- [x] Demo mode serves `noindex, nofollow` in the tag and the header, with the concept line. Live mode serves `index, follow`, the sitemap, `llms.txt` and no concept line.
+- [x] Lighthouse SEO is 100 in live mode on phone and desktop. The other three are 90 or higher. In demo mode the only failing SEO check is indexing.
+- [x] One h1 per page with the service and the region. Titles and descriptions are unique. JSON-LD validates and claims nothing untrue.
+- [x] The Open Graph image and favicon are his.
 
 ## Review log
 
@@ -89,3 +89,11 @@ Demo mode: SEO 69 on every page, the only failing SEO audit is `is-crawlable`. P
 
 Phone LCP on / and /about is Lighthouse's simulated slow-4G figure; the observed LCP on / was 155 ms. The simulation charges the React and Next.js runtime that starts loading before the hero photo paints. Fixes made in this phase: Archivo cut to weight 800 and widths 110 to 125 (188 KB to 38 KB), body font not preloaded, Dirt to Done photos mounted only near the viewport, Vercel Analytics only on Vercel (its script 404s locally).
 - Review 2 (whole site, fresh juror plus fact audit): 82/100. Design 33/40, usability 25/30, creativity 16/20, content 8/10. Fact audit: no banned items anywhere (no second number, owner name, ratings, prices, street address, irrigation, warranty, dashes). Fixed claims beyond section 1: removed "rollers", "throughout Maryland", "finish on schedule", "so the business can open again quickly", "Laser grading" chip and "level to the laser" on /excavation, "Shoreline riprap" service, "every photo is ours" (the pump truck is likely a supplier's). Design fixes: compact Call, Text, Email row on /free-estimate so the planner starts on the first phone screen; lighter bento scrims; no orphaned separator in the hero eyebrow; slimmer asphalt photo slot. Kept because the spec requires them: the Sherry H. quote in the proof strip and in reviews, photo 01 as the hero, "Waterfront slab on the Chesapeake Bay", "Forms set to the laser" readout, the per-tile planner links. Kept because they are his own published words, now listed for confirmation: permit drawings and site plans, bonding capacity, "no hidden fees", selected surrounding areas.
+
+## Final Lighthouse (after Review 2 fixes, Lighthouse 13.6.0)
+
+Live mode: SEO 100, accessibility 100, best practices 100 on all ten runs. Performance: phone / 93, /concrete 100, /our-work 96, /about 96, /free-estimate 100; desktop / 99, all others 100. CLS 0 everywhere.
+
+Demo mode: SEO 69 on all ten runs, only `is-crawlable` failing. Accessibility and best practices 100. Performance: phone / 94, /about 96, others 100; desktop 100.
+
+Notes against the checklist: phone LCP on /, /our-work and /about is 2.7 to 3.2 s in Lighthouse's simulated slow 4G (observed LCP on / was 155 ms), above the 2.5 s budget. Internet photos: none used (Pexels and Unsplash unreachable); the asphalt page carries one labelled photo slot instead.

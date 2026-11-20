@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Adams Property Works: concept site
 
-## Getting Started
+A front-end-only concept website for Adams Property Works (DL Adams), an owner-operated excavation, concrete, demolition and asphalt contractor in Great Mills, Southern Maryland. Built by Lee Enterprises Unlimited as a demo for the owner.
 
-First, run the development server:
+- Brief: `BUILD-SPEC.md`. Plan, tokens, review log and Lighthouse results: `implementation_kickstart.md`.
+- Launch checklist and redirects: `SEO-LAUNCH.md`. Photo and data credits: `CREDITS.md`.
+
+## Stack
+
+Next.js 16 (App Router, Turbopack), React 19, TypeScript, Tailwind CSS 4, `motion`, `lucide-react`, `@vercel/analytics`. All pages prerender as static HTML. No backend, no database, no API keys.
+
+## Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev            # http://localhost:3000
+npm run build && npm run start
+npm run lint
+npm run check          # site checks against a running server
+npm run validate:jsonld
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Modes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`NEXT_PUBLIC_SITE_MODE` is `demo` by default: every page and image carries `noindex, nofollow`, there is no sitemap or `llms.txt`, and the footer shows the concept line. `live` turns indexing on and refuses to build while any `DRAFT` item remains (see `SEO-LAUNCH.md`). The preview deployment stays in demo mode.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Import the GitHub repository into Vercel as its own project named `adams-property-works-concept`, framework preset Next.js, no environment variables needed for the demo. Optionally set `NEXT_PUBLIC_SITE_URL` to the preview address so canonical and Open Graph URLs are absolute to it.
