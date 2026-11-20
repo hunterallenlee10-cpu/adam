@@ -63,3 +63,39 @@ export const townOptions = [...towns, "Other"] as const;
 export function tradeLabel(t: Trade) {
   return trades.find((x) => x.id === t)?.label ?? "";
 }
+
+export type PlannerAnswers = {
+  trade?: Trade;
+  details: string[];
+  property?: string;
+  town?: string;
+  timing?: string;
+  name: string;
+  phone: string;
+  notes: string;
+  discount: boolean;
+};
+
+export function normalisePhone(raw: string): string | null {
+  let d = raw.replace(/\D/g, "");
+  if (d.length === 11 && d.startsWith("1")) d = d.slice(1);
+  if (d.length !== 10) return null;
+  return `(${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6)}`;
+}
+
+// The request as plain text, used for the text message, the email and the copy button.
+export function buildRequest(a: PlannerAnswers): string {
+  const work = a.trade ? tradeLabel(a.trade) : "";
+  const lines = [
+    "Free estimate request for Adams Property Works",
+    `Work: ${work}${a.details.length ? ` (${a.details.join(", ")})` : ""}`,
+    a.property ? `Property: ${a.property}` : "",
+    a.town ? `Town: ${a.town}` : "",
+    a.timing ? `Timing: ${a.timing}` : "",
+    `Name: ${a.name.trim()}`,
+    `Phone: ${normalisePhone(a.phone) ?? a.phone}`,
+    a.notes.trim() ? `Notes: ${a.notes.trim()}` : "",
+    a.discount ? "Please ask me about the senior or retired military discount." : "",
+  ];
+  return lines.filter(Boolean).join("\n");
+}

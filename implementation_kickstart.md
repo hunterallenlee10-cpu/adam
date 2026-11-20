@@ -12,7 +12,7 @@ After each phase: run the site, screenshot at 1440px and 375px with Playwright, 
 - [x] Review 1: a fresh subagent scores the hero screenshots as an award juror (design 40, usability 30, creativity 20, content 10) and names the three weakest things. One round of fixes
 - [x] Phase 2: proof strip, bento, Dirt to Done
 - [x] Phase 3: drainage band, proof section, process, who we work for, reviews, FAQ, service area strip, final band
-- [ ] Phase 4: Estimate Planner, every button wired with the right pre-selects, the honest last step, sticky phone bar, `/free-estimate`
+- [x] Phase 4: Estimate Planner, every button wired with the right pre-selects, the honest last step, sticky phone bar, `/free-estimate`
 - [ ] Phase 5: the service page template, then the four service pages with their tools and sourced thresholds
 - [ ] Phase 6: `/our-work`, `/about`, `/service-area`, `/faq`
 - [ ] Phase 7: SEO (launch switch, metadata, JSON-LD, robots, sitemap, llms.txt), the OG image, favicon, 404, `SEO-LAUNCH.md`, `CREDITS.md`
