@@ -28,7 +28,7 @@ for (const w of widths) {
   const ctx = await browser.newContext({
     viewport: { width: w, height: h },
     deviceScaleFactor: scale,
-    reducedMotion: reduce ? "reduce" : "no-preference",
+    reducedMotion: reduce || full ? "reduce" : "no-preference",
     hasTouch: w < 600,
     isMobile: w < 600,
   });
@@ -37,6 +37,17 @@ for (const w of widths) {
   page.on("pageerror", (e) => errors.push(e.message));
   page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
   await page.goto(base + path, { waitUntil: "networkidle" });
+  if (full) {
+    // Scroll through the page so lazy images load and scroll reveals play, then return to the top.
+    await page.evaluate(async () => {
+      for (let y = 0; y < document.body.scrollHeight; y += 400) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, 120));
+      }
+      window.scrollTo(0, 0);
+    });
+    await page.waitForTimeout(600);
+  }
   if (scrollTo) {
     await page.locator(scrollTo).first().scrollIntoViewIfNeeded();
     await page.evaluate(() => window.scrollBy(0, -80));

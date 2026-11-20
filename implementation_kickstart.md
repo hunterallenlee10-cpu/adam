@@ -10,7 +10,7 @@ After each phase: run the site, screenshot at 1440px and 375px with Playwright, 
 
 - [x] Phase 1: scaffold, tokens, fonts, the palette board, discount bar, nav, the home hero with the grade line (phone first), footer
 - [x] Review 1: a fresh subagent scores the hero screenshots as an award juror (design 40, usability 30, creativity 20, content 10) and names the three weakest things. One round of fixes
-- [ ] Phase 2: proof strip, bento, Dirt to Done
+- [x] Phase 2: proof strip, bento, Dirt to Done
 - [ ] Phase 3: drainage band, proof section, process, who we work for, reviews, FAQ, service area strip, final band
 - [ ] Phase 4: Estimate Planner, every button wired with the right pre-selects, the honest last step, sticky phone bar, `/free-estimate`
 - [ ] Phase 5: the service page template, then the four service pages with their tools and sourced thresholds

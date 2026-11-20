@@ -1,5 +1,8 @@
 import { pageMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
+import { ProofStrip } from "@/components/sections/ProofStrip";
+import { Bento } from "@/components/sections/Bento";
+import { DirtToDoneSection } from "@/components/sections/DirtToDoneSection";
 
 export const metadata = pageMetadata({
   title: "Excavation Contractor in Southern MD | Adams Property Works",
@@ -12,6 +15,9 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <ProofStrip />
+      <Bento />
+      <DirtToDoneSection />
     </>
   );
 }
