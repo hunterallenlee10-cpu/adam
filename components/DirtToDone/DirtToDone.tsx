@@ -22,6 +22,8 @@ export function DirtToDone() {
   const [jobIdx, setJobIdx] = useState(0);
   const [stage, setStage] = useState(0);
   const [interacted, setInteracted] = useState(false);
+  // Photos mount only when the section gets close to the viewport, so they never compete with the hero.
+  const [near, setNear] = useState(false);
   const reduce = useReducedMotion();
   const root = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
@@ -46,6 +48,22 @@ export function DirtToDone() {
     },
     [n, stopAuto],
   );
+
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   // Auto-advance once, the first time the section is in view.
   useEffect(() => {
@@ -168,7 +186,7 @@ export function DirtToDone() {
           >
             <figure className="min-w-0">
               <div className="relative aspect-[3/4] w-full max-w-[560px] overflow-hidden rounded-[6px] bg-deep">
-                {job.stages.map((s, i) => {
+                {near && job.stages.map((s, i) => {
                   const p = photos[s.photo];
                   return (
                     <m.div

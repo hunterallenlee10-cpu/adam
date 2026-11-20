@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Public_Sans } from "next/font/google";
+import { Public_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
@@ -12,12 +13,17 @@ import { SiteFooter } from "@/components/layout/SiteFooter";
 import { StickyBar } from "@/components/layout/StickyBar";
 import { BackToTop } from "@/components/layout/BackToTop";
 
-const archivo = Archivo({
-  subsets: ["latin"],
-  axes: ["wdth"],
-  style: ["normal", "italic"],
+// Archivo (SIL OFL), cut down to the only weight the site uses (800) and widths 110 to 125,
+// Latin subset. Roman and italic are 18 KB and 20 KB instead of 100 KB each for the full variable font.
+const archivo = localFont({
+  src: [
+    { path: "./fonts/archivo-800-roman.woff2", weight: "800", style: "normal" },
+    { path: "./fonts/archivo-800-italic.woff2", weight: "800", style: "italic" },
+  ],
   variable: "--font-archivo",
   display: "swap",
+  declarations: [{ prop: "font-stretch", value: "110% 125%" }],
+  fallback: ["Arial Black", "Arial", "system-ui", "sans-serif"],
 });
 
 const publicSans = Public_Sans({
@@ -25,7 +31,12 @@ const publicSans = Public_Sans({
   weight: ["400", "500", "600"],
   variable: "--font-public-sans",
   display: "swap",
+  // Body text never paints the largest element, so it does not compete with the hero photo.
+  preload: false,
 });
+
+// Vercel Analytics only exists on Vercel. Locally its script would 404 and log a console error.
+const onVercel = !!process.env.VERCEL;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -67,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <StickyBar />
           <BackToTop />
         </PlannerProvider>
-        <Analytics />
+        {onVercel && <Analytics />}
       </body>
     </html>
   );

@@ -16,7 +16,7 @@ After each phase: run the site, screenshot at 1440px and 375px with Playwright, 
 - [x] Phase 5: the service page template, then the four service pages with their tools and sourced thresholds
 - [x] Phase 6: `/our-work`, `/about`, `/service-area`, `/faq`
 - [x] Phase 7: SEO (launch switch, metadata, JSON-LD, robots, sitemap, llms.txt), the OG image, favicon, 404, `SEO-LAUNCH.md`, `CREDITS.md`
-- [ ] Phase 8: Lighthouse on a production build, phone and desktop, home plus one page of each type. Live mode: SEO 100, others 90+. Demo mode: only the indexing check fails. Print demo-mode headers for the home page and one image
+- [x] Phase 8: Lighthouse on a production build, phone and desktop, home plus one page of each type. Live mode: SEO 100, others 90+. Demo mode: only the indexing check fails. Print demo-mode headers for the home page and one image
 - [ ] Review 2: a second fresh subagent scores the whole site and runs a fact audit against section 1. One round of fixes
 - [ ] Phase 9: final checklist, last commit, ready for GitHub and a Vercel import as `adams-property-works-concept`
 
@@ -67,3 +67,24 @@ Spacing: 8px grid. Sections 112 to 128px desktop, 72px phones.
 ## Review log
 
 - Review 1 (hero, fresh juror): 69/100. Design 28/40, usability 21/30, creativity 12/20, content 8/10. Weakest: photo crop wasted on sky, call button below the phone fold, signature details unreadable at rest. Fixed: bottom-anchored scale on the desktop photo so the Komatsu, operator and rubble fill the panel; shorter phone photo and tighter eyebrow so both buttons sit on the first 375x812 screen; larger level vial with centre ticks; rule drawn behind the letters with a shadow so it reads over the photo; a "GRADE ±0.00" tag; sweep starts after fonts load. Declined: rewording the eyebrow and discount bar (fixed copy in the spec) and moving the rule below the descenders (spec puts it on the baseline).
+
+## Phase 8 results (Lighthouse 13.6.0, production build, `next build` then `next start`)
+
+Live mode (local, `NEXT_PUBLIC_SITE_URL=http://localhost:3000`, `LOCAL_AUDIT=1` because DRAFT items remain):
+
+| Form | Page | Perf | A11y | BP | SEO | LCP | CLS |
+|---|---|---|---|---|---|---|---|
+| Phone | / | 91 | 100 | 100 | 100 | 3.5 s | 0 |
+| Phone | /concrete | 100 | 100 | 100 | 100 | 0.9 s | 0 |
+| Phone | /our-work | 100 | 100 | 100 | 100 | 0.9 s | 0 |
+| Phone | /about | 95 | 100 | 100 | 100 | 3.0 s | 0 |
+| Phone | /free-estimate | 100 | 100 | 100 | 100 | 0.8 s | 0 |
+| Desktop | / | 100 | 100 | 100 | 100 | 0.8 s | 0 |
+| Desktop | /concrete | 100 | 100 | 100 | 100 | 0.7 s | 0 |
+| Desktop | /our-work | 100 | 100 | 100 | 100 | 0.3 s | 0 |
+| Desktop | /about | 100 | 100 | 100 | 100 | 0.7 s | 0 |
+| Desktop | /free-estimate | 100 | 100 | 100 | 100 | 0.2 s | 0 |
+
+Demo mode: SEO 69 on every page, the only failing SEO audit is `is-crawlable`. Performance, accessibility and best practices as above (phone home 88, phone About 98, all others 100).
+
+Phone LCP on / and /about is Lighthouse's simulated slow-4G figure; the observed LCP on / was 155 ms. The simulation charges the React and Next.js runtime that starts loading before the hero photo paints. Fixes made in this phase: Archivo cut to weight 800 and widths 110 to 125 (188 KB to 38 KB), body font not preloaded, Dirt to Done photos mounted only near the viewport, Vercel Analytics only on Vercel (its script 404s locally).
