@@ -7,7 +7,11 @@ export type SiteMode = "demo" | "live";
 export const SITE_MODE: SiteMode = process.env.NEXT_PUBLIC_SITE_MODE === "live" ? "live" : "demo";
 export const IS_LIVE = SITE_MODE === "live";
 
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "");
+// Explicit URL first; on Vercel, the project's production domain; locally, localhost.
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000")
+).replace(/\/$/, "");
 
 export function absoluteUrl(path = "/") {
   return `${SITE_URL}${path}`;

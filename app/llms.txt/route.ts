@@ -1,10 +1,15 @@
 import { business, counties, towns } from "@/lib/business";
 import { serviceList } from "@/lib/services";
+import { connection } from "next/server";
 import { IS_LIVE, absoluteUrl } from "@/lib/site";
 
 // Live mode only.
-export function GET() {
-  if (!IS_LIVE) return new Response("Not found", { status: 404, headers: { "content-type": "text/plain" } });
+export async function GET() {
+  // Demo mode answers at request time, so hosts that serve prerendered files keep the 404 status.
+  if (!IS_LIVE) {
+    await connection();
+    return new Response("Not found", { status: 404, headers: { "content-type": "text/plain" } });
+  }
   const md = `# ${business.name}
 
 > Owner-operated excavation, concrete, demolition and asphalt contractor based in ${business.locality}, ${business.region} ${business.postalCode}, serving ${counties.map((c) => c.name).join(", ")} in Southern Maryland for ${business.yearsLong}. Also trades as ${business.dba}.
