@@ -9,7 +9,7 @@ Installed: Next.js 16.4.6, React 19.3.0, TypeScript 5.9.3, Tailwind CSS 4.3.3, m
 After each phase: run the site, screenshot at 1440px and 375px with Playwright, look at the screenshots, fix the three weakest things, run `npm run check`, tick the box, commit.
 
 - [x] Phase 1: scaffold, tokens, fonts, the palette board, discount bar, nav, the home hero with the grade line (phone first), footer
-- [ ] Review 1: a fresh subagent scores the hero screenshots as an award juror (design 40, usability 30, creativity 20, content 10) and names the three weakest things. One round of fixes
+- [x] Review 1: a fresh subagent scores the hero screenshots as an award juror (design 40, usability 30, creativity 20, content 10) and names the three weakest things. One round of fixes
 - [ ] Phase 2: proof strip, bento, Dirt to Done
 - [ ] Phase 3: drainage band, proof section, process, who we work for, reviews, FAQ, service area strip, final band
 - [ ] Phase 4: Estimate Planner, every button wired with the right pre-selects, the honest last step, sticky phone bar, `/free-estimate`
@@ -63,3 +63,7 @@ Spacing: 8px grid. Sections 112 to 128px desktop, 72px phones.
 - [ ] Lighthouse SEO is 100 in live mode on phone and desktop. The other three are 90 or higher. In demo mode the only failing SEO check is indexing.
 - [ ] One h1 per page with the service and the region. Titles and descriptions are unique. JSON-LD validates and claims nothing untrue.
 - [ ] The Open Graph image and favicon are his.
+
+## Review log
+
+- Review 1 (hero, fresh juror): 69/100. Design 28/40, usability 21/30, creativity 12/20, content 8/10. Weakest: photo crop wasted on sky, call button below the phone fold, signature details unreadable at rest. Fixed: bottom-anchored scale on the desktop photo so the Komatsu, operator and rubble fill the panel; shorter phone photo and tighter eyebrow so both buttons sit on the first 375x812 screen; larger level vial with centre ticks; rule drawn behind the letters with a shadow so it reads over the photo; a "GRADE ±0.00" tag; sweep starts after fonts load. Declined: rewording the eyebrow and discount bar (fixed copy in the spec) and moving the rule below the descenders (spec puts it on the baseline).

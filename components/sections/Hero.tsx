@@ -11,13 +11,14 @@ export function Hero() {
     <section data-hero className="relative overflow-hidden border-b border-border" aria-label="Introduction">
       <div className="lg:grid lg:min-h-[min(calc(100svh-112px),860px)] lg:grid-cols-12">
         {/* Photo: 4:5 on phones (capped so the headline and button stay on the first screen), right 7 columns on desktop. */}
-        <figure className="relative h-[clamp(220px,38svh,469px)] sm:h-[min(80vw,52svh)] lg:order-2 lg:col-span-7 lg:h-auto">
+        <figure className="relative h-[clamp(210px,33svh,469px)] sm:h-[min(80vw,52svh)] lg:order-2 lg:col-span-7 lg:h-auto">
           <Photo
             id="p01"
             preload
-            sizes="(min-width: 1024px) 58vw, 100vw"
+            sizes="(min-width: 1024px) 75vw, 100vw"
             className="absolute inset-0 rounded-none"
-            pos="38% 62%"
+            imgClassName="lg:origin-[82%_92%] lg:scale-[1.2]"
+            pos="40% 78%"
           />
           <figcaption className="absolute bottom-0 right-0 hidden max-w-xs rounded-tl-[6px] bg-bg/90 px-4 py-2.5 text-[0.8125rem] leading-snug text-ink lg:block">
             Our <span className="font-semibold">Komatsu PC120</span> taking down a single-storey house.
@@ -27,7 +28,8 @@ export function Hero() {
         <div className="relative z-10 flex flex-col justify-center px-5 pb-12 pt-5 sm:px-8 sm:pt-9 lg:order-1 lg:col-span-5 lg:py-12 lg:pl-[max(48px,calc((100vw-1320px)/2+48px))] lg:pr-10 xl:pr-14">
           <h1 className="order-1 text-pretty sm:order-none">
             <GradeLine
-              eyebrow="Excavation, concrete, demolition and asphalt contractor · Southern Maryland"
+              eyebrow="Excavation, concrete, demolition and asphalt contractor"
+              eyebrowTail="· Southern Maryland"
               lines={["From the", "first dig", "to the", "final pour."]}
             />
           </h1>

@@ -19,11 +19,11 @@ export function GoogleIcon({ size = 18 }: { size?: number }) {
 // The bubble-level mark used beside eyebrows.
 export function LevelMark({ className = "" }: { className?: string }) {
   return (
-    <svg className={className} width="34" height="12" viewBox="0 0 34 12" aria-hidden="true" focusable="false">
-      <rect x="0.75" y="0.75" width="32.5" height="10.5" rx="5.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <line x1="13" y1="2.5" x2="13" y2="9.5" stroke="currentColor" strokeWidth="1" />
-      <line x1="21" y1="2.5" x2="21" y2="9.5" stroke="currentColor" strokeWidth="1" />
-      <circle cx="17" cy="6" r="2.6" fill="var(--color-accent)" />
+    <svg className={className} width="48" height="16" viewBox="0 0 48 16" aria-hidden="true" focusable="false">
+      <rect x="0.75" y="0.75" width="46.5" height="14.5" rx="7.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <rect x="9" y="4.5" width="30" height="7" rx="3.5" fill="none" stroke="currentColor" strokeWidth="0.75" opacity="0.5" />
+      <line x1="18.5" y1="2.5" x2="18.5" y2="13.5" stroke="currentColor" strokeWidth="1.25" />
+      <line x1="29.5" y1="2.5" x2="29.5" y2="13.5" stroke="currentColor" strokeWidth="1.25" />
     </svg>
   );
 }

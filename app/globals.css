@@ -338,6 +338,7 @@
   /* The grade line rests in its final state. */
   .gl-head,
   .gl-line,
+  .gl-tag,
   .gl-bubble {
     transform: none !important;
   }
