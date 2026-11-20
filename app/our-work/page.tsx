@@ -25,7 +25,7 @@ export default function OurWorkPage() {
               <h1 className="mt-4 text-h1 text-primary">Recent work, start to finish.</h1>
             </div>
             <p className="text-lead text-ink/85 lg:col-span-5">
-              Every photo here is ours: our crew, our machines, jobs across Southern Maryland. Start with three jobs shot stage by stage.
+              Every photo here is from our own jobs across Southern Maryland. Start with three jobs shot stage by stage.
             </p>
           </div>
         </div>

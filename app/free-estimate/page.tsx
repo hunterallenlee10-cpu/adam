@@ -22,7 +22,7 @@ export default function FreeEstimatePage() {
   return (
     <>
       <section className="border-b border-border">
-        <div className="container-x pb-12 pt-6 lg:pb-16 lg:pt-8">
+        <div className="container-x pb-8 pt-6 lg:pb-16 lg:pt-8">
           <Breadcrumbs items={[{ name: "Free Estimate", path: "/free-estimate" }]} />
           <div className="mt-8 grid gap-8 lg:mt-12 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
@@ -34,17 +34,21 @@ export default function FreeEstimatePage() {
               written, itemised quote.
             </p>
           </div>
-          <ul className="mt-10 grid gap-3 md:grid-cols-3">
+          <ul className="mt-8 grid grid-cols-3 gap-2 md:mt-10 md:gap-3">
             {tiles.map((t) => (
-              <li key={t.label}>
-                <a href={t.href} className="slab flex min-h-[96px] items-center gap-4 p-5 transition-colors hover:border-primary">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-primary text-deep-text">
-                    <t.icon size={22} aria-hidden="true" />
+              <li key={t.label} className="min-w-0">
+                <a
+                  href={t.href}
+                  aria-label={`${t.label} ${t.value}`}
+                  className="slab flex min-h-[56px] flex-col items-center justify-center gap-1 p-2 text-center transition-colors hover:border-primary md:min-h-[96px] md:flex-row md:justify-start md:gap-4 md:p-5 md:text-left"
+                >
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-primary text-deep-text md:h-12 md:w-12">
+                    <t.icon size={20} aria-hidden="true" />
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-sm font-semibold uppercase tracking-[0.12em] text-muted">{t.label}</span>
-                    <span className="block break-all font-semibold text-ink">{t.value}</span>
-                    <span className="block text-sm text-muted">{t.note}</span>
+                    <span className="block text-sm font-semibold text-ink md:text-sm md:uppercase md:tracking-[0.12em] md:text-muted">{t.label}</span>
+                    <span className="hidden font-semibold text-ink [overflow-wrap:anywhere] md:block">{t.value}</span>
+                    <span className="hidden text-sm text-muted md:block">{t.note}</span>
                   </span>
                 </a>
               </li>
@@ -53,7 +57,7 @@ export default function FreeEstimatePage() {
         </div>
       </section>
 
-      <section className="section" aria-label="Estimate planner">
+      <section className="pb-[72px] pt-6 lg:py-[120px]" aria-label="Estimate planner">
         <div className="container-x grid gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="slab flex min-h-[560px] flex-col lg:col-span-7">
             <PlannerSteps titleId="inline-planner-title" />

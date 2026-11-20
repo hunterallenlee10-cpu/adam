@@ -5,7 +5,7 @@ export type QA = { q: string; a: string };
 
 const licensed: QA = {
   q: "Are you licensed and insured?",
-  a: "Yes. We are licensed, bonded and insured to work throughout Maryland. Our crew arrives in uniform, and we hold every job to the same standard, from a small repair to commercial site prep. Ask us for proof of insurance at any time.",
+  a: "Yes. We are licensed, bonded and insured. Our crew arrives in uniform, and we hold every job to the same standard, from a small repair to commercial site prep. Ask us for proof of insurance at any time.",
 };
 const estimates: QA = {
   q: "Do you offer free estimates?",
@@ -50,7 +50,7 @@ const overOld: QA = {
 };
 const largeScale: QA = {
   q: "Are you equipped for large-scale site development and clearing?",
-  a: 'Yes. We run excavators, loaders and rollers for multi-acre clearing, mass grading and commercial foundation digs, and we take raw land to a "pad-ready" site for developers across Southern Maryland.',
+  a: 'Yes. We run excavators and loaders for multi-acre clearing, grading and commercial foundation digs, and we take raw land to a "pad-ready" site for developers across Southern Maryland.',
 };
 const hoa: QA = {
   q: "Do you work with HOAs and property management firms?",

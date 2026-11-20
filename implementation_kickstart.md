@@ -17,7 +17,7 @@ After each phase: run the site, screenshot at 1440px and 375px with Playwright, 
 - [x] Phase 6: `/our-work`, `/about`, `/service-area`, `/faq`
 - [x] Phase 7: SEO (launch switch, metadata, JSON-LD, robots, sitemap, llms.txt), the OG image, favicon, 404, `SEO-LAUNCH.md`, `CREDITS.md`
 - [x] Phase 8: Lighthouse on a production build, phone and desktop, home plus one page of each type. Live mode: SEO 100, others 90+. Demo mode: only the indexing check fails. Print demo-mode headers for the home page and one image
-- [ ] Review 2: a second fresh subagent scores the whole site and runs a fact audit against section 1. One round of fixes
+- [x] Review 2: a second fresh subagent scores the whole site and runs a fact audit against section 1. One round of fixes
 - [ ] Phase 9: final checklist, last commit, ready for GitHub and a Vercel import as `adams-property-works-concept`
 
 ## Design tokens ("Grade Line")
@@ -88,3 +88,4 @@ Live mode (local, `NEXT_PUBLIC_SITE_URL=http://localhost:3000`, `LOCAL_AUDIT=1` 
 Demo mode: SEO 69 on every page, the only failing SEO audit is `is-crawlable`. Performance, accessibility and best practices as above (phone home 88, phone About 98, all others 100).
 
 Phone LCP on / and /about is Lighthouse's simulated slow-4G figure; the observed LCP on / was 155 ms. The simulation charges the React and Next.js runtime that starts loading before the hero photo paints. Fixes made in this phase: Archivo cut to weight 800 and widths 110 to 125 (188 KB to 38 KB), body font not preloaded, Dirt to Done photos mounted only near the viewport, Vercel Analytics only on Vercel (its script 404s locally).
+- Review 2 (whole site, fresh juror plus fact audit): 82/100. Design 33/40, usability 25/30, creativity 16/20, content 8/10. Fact audit: no banned items anywhere (no second number, owner name, ratings, prices, street address, irrigation, warranty, dashes). Fixed claims beyond section 1: removed "rollers", "throughout Maryland", "finish on schedule", "so the business can open again quickly", "Laser grading" chip and "level to the laser" on /excavation, "Shoreline riprap" service, "every photo is ours" (the pump truck is likely a supplier's). Design fixes: compact Call, Text, Email row on /free-estimate so the planner starts on the first phone screen; lighter bento scrims; no orphaned separator in the hero eyebrow; slimmer asphalt photo slot. Kept because the spec requires them: the Sherry H. quote in the proof strip and in reviews, photo 01 as the hero, "Waterfront slab on the Chesapeake Bay", "Forms set to the laser" readout, the per-tile planner links. Kept because they are his own published words, now listed for confirmation: permit drawings and site plans, bonding capacity, "no hidden fees", selected surrounding areas.

@@ -57,8 +57,8 @@ export default function AboutPage() {
               Calvert and Charles Counties. We do the foundation work of a property: excavation and site prep, concrete, demolition and asphalt.
             </p>
             <p>
-              Our crew is seasoned machine operators who know Maryland&apos;s soil and weather. We arrive on time and in uniform, we finish on
-              schedule, and we leave the site clean. Homeowner or business, small patio or full parking lot, you get the same care.
+              Our crew is seasoned machine operators who know Maryland&apos;s soil and weather. We arrive on time and in uniform, we work to
+              the schedule we give you, and we leave the site clean. Homeowner or business, small patio or full parking lot, you get the same care.
             </p>
             <p className="font-display text-h3 font-extrabold text-primary wide-sm">{lines.getItDone}</p>
           </div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
           <h2 id="equipment-heading" className="mt-4 text-h2 text-primary">
             Our own iron.
           </h2>
-          <p className="mt-4 measure text-lead text-ink/85">Everything you see in our photos is ours, run by our crew.</p>
+          <p className="mt-4 measure text-lead text-ink/85">The machines you see on our jobs, run by our crew.</p>
           <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-4">
             {equipment.map((e) => (
               <li key={e.name}>

@@ -61,7 +61,7 @@ export const services: Record<Service["slug"], Service> = {
     heroPhoto: "p03",
     heroPos: "40% 60%",
     heroCaption: "The Adams truck and Kubota on a freshly graded lot.",
-    facts: ["Miss Utility (811) before every dig", "Laser grading", "Pad-ready sites"],
+    facts: ["Miss Utility (811) before every dig", "Grading to plan", "Pad-ready sites"],
     blocks: [
       {
         id: "site-prep",
@@ -73,7 +73,7 @@ export const services: Record<Service["slug"], Service> = {
       {
         id: "grading",
         title: "Grading and foundations",
-        body: "We cut and level to the laser, dig footers and foundations, and build the base for roads and driveways.",
+        body: "We cut and level to grade, dig footers and foundations, and build the base for roads and driveways.",
         list: ["Grading and levelling", "Footer and foundation digs", "Road installation and repair"],
         photos: ["p15"],
       },
@@ -88,7 +88,7 @@ export const services: Record<Service["slug"], Service> = {
         id: "erosion",
         title: "Sediment and erosion control",
         body: "Silt fence, stabilised entrances, inlet protection, matting and riprap, built to hold through a Southern Maryland summer storm and keep your site out of trouble with inspectors.",
-        list: ["Silt fence and super silt fence", "Stabilised construction entrances", "Inlet protection", "Erosion matting and straw", "Shoreline riprap"],
+        list: ["Silt fence and super silt fence", "Stabilised construction entrances", "Inlet protection", "Erosion matting and straw", "Riprap aprons"],
         photos: ["p25", "p32"],
       },
       {
@@ -141,7 +141,7 @@ export const services: Record<Service["slug"], Service> = {
       {
         id: "commercial",
         title: "Commercial entrances",
-        body: "Storefront entrances and walks, prepped, formed and poured so the business can open again quickly.",
+        body: "Storefront entrances and walks, prepped, formed and poured. Before and after, same entrance.",
         list: ["Repairs", "Saw cutting", "Joint repair"],
         kind: "beforeAfter",
         photos: ["p34", "p35"],

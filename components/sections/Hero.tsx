@@ -28,8 +28,8 @@ export function Hero() {
         <div className="relative z-10 flex flex-col justify-center px-5 pb-12 pt-5 sm:px-8 sm:pt-9 lg:order-1 lg:col-span-5 lg:py-12 lg:pl-[max(48px,calc((100vw-1320px)/2+48px))] lg:pr-10 xl:pr-14">
           <h1 className="order-1 text-pretty sm:order-none">
             <GradeLine
-              eyebrow="Excavation, concrete, demolition and asphalt contractor"
-              eyebrowTail="· Southern Maryland"
+              eyebrow="Excavation, concrete, demolition and asphalt contractor ·"
+              eyebrowTail="Southern Maryland"
               lines={["From the", "first dig", "to the", "final pour."]}
             />
           </h1>

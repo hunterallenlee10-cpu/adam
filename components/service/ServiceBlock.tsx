@@ -7,7 +7,7 @@ function Media({ b }: { b: Block }) {
   if (b.kind === "placeholder") {
     // A labelled placeholder until he supplies a real photo. No stock image used.
     return (
-      <div className="grid aspect-[16/10] place-items-center rounded-[6px] border-2 border-dashed border-border bg-surface p-8 text-center">
+      <div className="grid aspect-[16/6] place-items-center rounded-[6px] border-2 border-dashed border-border bg-surface p-8 text-center">
         <div>
           <Camera size={28} className="mx-auto text-muted" aria-hidden="true" />
           <p className="mt-3 font-semibold text-muted">{b.placeholder}</p>

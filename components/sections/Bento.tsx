@@ -98,7 +98,7 @@ export function Bento() {
               />
               <div
                 className="absolute inset-0"
-                style={{ background: "linear-gradient(to top, rgb(11 31 18 / 0.96) 0%, rgb(11 31 18 / 0.78) 42%, rgb(11 31 18 / 0.25) 70%, rgb(11 31 18 / 0) 85%)" }}
+                style={{ background: "linear-gradient(to top, rgb(11 31 18 / 0.94) 0%, rgb(11 31 18 / 0.7) 34%, rgb(11 31 18 / 0.12) 60%, rgb(11 31 18 / 0) 72%)" }}
                 aria-hidden="true"
               />
               <div className="on-deep relative flex h-full min-h-[inherit] flex-col justify-end p-5 sm:p-7">
