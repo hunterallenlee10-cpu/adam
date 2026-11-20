@@ -104,11 +104,10 @@ export function GradeLine({ eyebrow, eyebrowTail, lines }: Props) {
               style={{ left: "-100vw", width: "300vw", bottom: "0.15em", scaleX: 0, transformOrigin: "0% 50%" }}
             >
               <m.span
-                className="gl-tag absolute bottom-[6px] right-4 hidden rounded-[3px] bg-accent px-1.5 py-0.5 font-sans text-[0.6875rem] font-semibold not-italic leading-none tracking-[0.14em] text-ink lg:block xl:right-6"
+                className="gl-tag after:content-[attr(data-tag)] absolute bottom-[6px] right-4 hidden rounded-[3px] bg-accent px-1.5 py-0.5 font-sans text-[0.6875rem] font-semibold not-italic leading-none tracking-[0.14em] text-ink lg:block xl:right-6"
                 style={{ scaleX: 0, transformOrigin: "100% 50%" }}
-              >
-                GRADE &plusmn;0.00
-              </m.span>
+                data-tag="GRADE ±0.00"
+              />
             </m.span>
           </span>
         </span>
